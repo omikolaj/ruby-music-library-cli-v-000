@@ -5,7 +5,15 @@ class MusicLibraryController
   end
 
   def list_songs
-
+    binding.pry
+    Song.all.sort! do |a,b|
+      binding.pry
+      a.name<=>b.name
+      binding.pry
+    end
+    Song.all.each_with_index do |song,index|
+      puts "#{index+1}. #{song.name} - #{song.artist.name} - #{song.genre.name}"
+    end
   end
 
 

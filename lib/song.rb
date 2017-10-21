@@ -11,6 +11,7 @@ class Song
     self.genre = genre if genre
   end
 
+<<<<<<< HEAD
   def artist=(artist)
     #binding.pry
     @artist = artist
@@ -31,6 +32,12 @@ class Song
 
   def self.create_from_filename(filename)
      self.new_from_filename(filename).save
+=======
+  def self.new_from_filename(filename)
+    #binding.pry
+    song = self.create(filename.split(" - ")[1])
+    song.artist.name = (filename.split(" - ")[0])
+>>>>>>> b3f4ff2b9b13555c6899f58ad9602b197e573d53
   end
 
   def genre=(genre)
